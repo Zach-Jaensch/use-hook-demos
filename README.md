@@ -9,6 +9,7 @@ It enables powerful patterns, when used with [React Context](https://react.dev/l
 First, run the development server:
 
 ```bash
+pnpm i
 pnpm dev
 ```
 
