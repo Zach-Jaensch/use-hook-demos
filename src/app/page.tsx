@@ -27,19 +27,19 @@ async function getTeam() {
 }
 
 export default function Home() {
-  // const [team, setTeam] = useState<Promise<{ id: number; name: string }>>(
-  //   new Promise(() => {})
-  // );
-  // useEffect(() => {
-  //   setTeam(getTeam);
-  // }, []);
+  const [team, setTeam] = useState<Promise<{ id: number; name: string }>>(
+    new Promise(() => {})
+  );
+  useEffect(() => {
+    setTeam(getTeam);
+  }, []);
   return (
     <UserProvider>
       <main className="p-4 flex flex-col items-center justify-center space-y-4 h-screen">
         <ErrorBoundary fallbackRender={fallbackRender}>
           <Suspense fallback={<p>Loading...</p>}>
             <User />
-            {/* <Team team={team} /> */}
+            <Team team={team} />
           </Suspense>
         </ErrorBoundary>
       </main>
